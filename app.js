@@ -26,8 +26,15 @@ function saveData(data) {
 }
 
 
-fetchData()
-    .then(data1 => processData(data1))
-    .then(data2 => saveData(data2))
-    .then(result => console.log(result))
-    .catch(err => console.error(err));
+async function task() {
+    try {
+        const data1 = await fetchData();
+        const data2 = await processData(data1);
+        const result = await saveData(data2);
+        console.log(result);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+task();
