@@ -31,10 +31,3 @@ fetchData()
     .then(data2 => saveData(data2))
     .then(result => console.log(result))
     .catch(err => console.error(err));
-
-
-    const array1 = {a: 1, b: { c: 2 }};
-    const array2 = {...array1};
-    array2.b.c = 42;
-
-    console.log(array2.b.c)
